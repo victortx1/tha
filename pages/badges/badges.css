@@ -1,0 +1,15 @@
+.badges-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.badge-card{position:relative;overflow:hidden;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow);transition:.25s ease}
+.badge-card:hover{transform:translateY(-5px)}
+.badge-card::after{content:"";position:absolute;inset:auto -20% -35% -20%;height:90px;background:var(--rare-glow);filter:blur(25px)}
+.badge-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.badge-icon{width:58px;height:58px;border-radius:19px;background:#fff;display:grid;place-items:center;font-size:28px;border:1px solid var(--line);animation:floatBadge 3s ease-in-out infinite}
+.badge-rarity{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1px;border-radius:999px;padding:7px 10px;background:#fff}
+.badge-card h3{font-family:var(--title);font-size:18px}
+.badge-card p{color:var(--muted);line-height:1.5;margin-top:8px}
+.badge-card.comum{--rare-glow:rgba(170,170,170,.22)}
+.badge-card.rara{--rare-glow:rgba(102,178,255,.26)}
+.badge-card.epica{--rare-glow:rgba(195,92,255,.26)}
+.badge-card.lendaria{--rare-glow:rgba(255,126,182,.36)}
+.badge-card.locked{filter:grayscale(.8);opacity:.62}
+@keyframes floatBadge{50%{transform:translateY(-5px) rotate(3deg)}}

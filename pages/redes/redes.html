@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THA — Redes</title>
+  <meta name="theme-color" content="#ff7eb6">
+  <link rel="icon" href="../../assets/fotos/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="redes.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="nav-brand">
+        <a class="logo" href="../../index.html">T<span></span>H<span>A</span></a>
+        <div id="navMiniProfile" class="nav-mini" hidden aria-label="Seu perfil">
+          <img id="navMiniAvatar" class="nav-mini__avatar" alt="">
+          <div class="nav-mini__info">
+            <strong id="navMiniName">Agente</strong>
+            <span class="nav-mini__coins">🪙 <span id="navMiniCoins">0</span></span>
+          </div>
+          <a id="navMiniProfileBtn" class="btn btn-ghost btn-sm" data-nav-perfil>Meu Perfil</a>
+        </div>
+      </div>
+      <button class="menu-btn" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a data-nav-home href="../../index.html">Home</a>
+        <a data-nav-perfil href="../perfil/perfil.html">Perfil</a>
+        <a data-nav-loja href="../loja/loja.html">Loja</a>
+        <a href="../badges/badges.html">Badges</a>
+        <a href="redes.html">Redes</a>
+        <a data-nav-game href="../game/game.html">Game</a>
+        <button id="navLoginBtn" class="btn btn-primary btn-sm" type="button" onclick="loginGoogle()">Entrar</button>
+        <button id="navLogoutBtn" class="btn btn-ghost btn-sm" type="button" data-logout hidden>Sair</button>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Redes</span>
+          <h2>Conecte-se com a THA</h2>
+          <p class="lead">Troque os links reais no arquivo <b>js/social.js</b>.</p>
+        </div>
+        <div id="socialGrid" class="social-grid"></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><strong>THA</strong><span>Site gamer rosa claro inspirado em HUD competitivo.</span></div></footer>
+  <script type="module" src="redes.js"></script>
+</body>
+</html>

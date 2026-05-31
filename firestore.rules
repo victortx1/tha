@@ -1,0 +1,62 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function validGender(value) {
+      return value in ['homem', 'menina', 'outro'];
+    }
+
+    function validAvatarId(value) {
+      return value in ['avatar_tha_1', 'avatar_blue_1', 'avatar_angel_1'];
+    }
+
+    function validBannerId(value) {
+      return value in ['banner_tha_1', 'banner_blue_1', 'banner_white_1'];
+    }
+
+    function validSocialLinks(data) {
+      return data.keys().hasOnly(['tiktok', 'instagram', 'youtube', 'discord'])
+        && data.tiktok is string
+        && data.instagram is string
+        && data.youtube is string
+        && data.discord is string;
+    }
+
+    match /users/{uid} {
+      allow read: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.uid == request.auth.uid;
+      allow update: if isOwner(uid)
+        && request.resource.data.uid == resource.data.uid
+        && request.resource.data.coins is number
+        && request.resource.data.coins >= 0
+        && request.resource.data.coins <= 999999
+        && validGender(request.resource.data.gender)
+        && validAvatarId(request.resource.data.selectedAvatar)
+        && validBannerId(request.resource.data.selectedBanner)
+        && request.resource.data.ownedAvatars is list
+        && request.resource.data.ownedBanners is list
+        && validSocialLinks(request.resource.data.socialLinks);
+      allow delete: if isOwner(uid);
+    }
+
+    match /profiles/{uid} {
+      allow read: if true;
+      allow create, update: if isOwner(uid)
+        && request.resource.data.uid == request.auth.uid
+        && validGender(request.resource.data.gender)
+        && validAvatarId(request.resource.data.selectedAvatar)
+        && validBannerId(request.resource.data.selectedBanner)
+        && validSocialLinks(request.resource.data.socialLinks);
+      allow delete: if isOwner(uid);
+    }
+  }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THA — Perfil</title>
+  <meta name="theme-color" content="#ff7eb6">
+  <link rel="icon" href="../../assets/fotos/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="perfil.css">
+</head>
+
+<body class="gender-female">
+  <div class="page-bg"></div>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Perfil</span>
+          <h2>Seu card de agente</h2>
+          <p class="lead">Monte seu perfil, equipe itens da loja.</p>
+        </div>
+
+        <div id="authBox" class="auth-box card">
+          <h3>Entrar na comunidade THA</h3>
+          <p class="lead">Use sua conta Google para criar seu perfil.</p>
+          <button class="btn btn-primary" type="button" onclick="loginGoogle()">Entrar com Google</button>
+        </div>
+
+        <div id="profileArea" hidden>
+          <div id="publicProfile" class="public-profile profile-card card">
+            <div class="profile-card__banner">
+              <img id="publicBanner" alt="Banner do perfil">
+            </div>
+            <div class="profile-card__avatar-row">
+              <div class="profile-card__avatar">
+                <img id="publicPhoto" alt="Foto do perfil">
+              </div>
+            </div>
+            <div class="public-body">
+              <div class="profile-card__body">
+                <span class="kicker">Perfil público</span>
+                <h3 class="profile-card__name" id="publicName">Agente THA</h3>
+                <p class="profile-card__bio" id="publicBio">Perfil de agente da comunidade THA.</p>
+                <p class="profile-coins">
+                  <img src="../../assets/fotos/moeda.png" alt="Moeda" class="coin-icon">
+                  <span id="profileCoins">0</span> moedas
+                </p>
+                <div class="profile-card__tags">
+                  <span id="publicGender">Menina</span>
+                </div>
+                <div id="publicSocials" class="social-user-grid"></div>
+              </div>
+              <button id="editToggle" class="btn btn-primary" type="button">Editar Perfil</button>
+              <button class="btn btn-primary" type="button" onclick="window.location.href='../../index.html'">
+                Voltar ao Início
+              </button>
+            </div>
+          </div>
+
+          <div id="profileEditor" class="profile-layout" hidden>
+            <form class="profile-form card" onsubmit="return false;">
+              <div class="editor-title-row">
+                <div>
+                  <span class="kicker">Editar</span>
+                  <h3>Personalização</h3>
+                </div>
+                <button id="closeEditor" type="button" class="btn btn-ghost">Ver perfil</button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="nickname">Nickname</label>
+                  <input id="nickname" maxlength="40" placeholder="Agente THA">
+                </div>
+
+                <div class="form-group">
+                  <label for="gender">Gênero</label>
+                  <select id="gender">
+                    <option value="menina">Menina</option>
+                    <option value="homem">Homem</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+
+                <div class="form-group full">
+                  <label>Avatar equipado</label>
+                  <p class="hint">Itens 🔒 precisam ser comprados na loja.</p>
+                  <p id="photoChoicesHint" class="hint"></p>
+                  <div id="photoChoices" class="choice-grid"></div>
+                </div>
+
+                <div class="form-group full">
+                  <label>Banner equipado</label>
+                  <p id="bannerChoicesHint" class="hint"></p>
+                  <div id="bannerChoices" class="choice-grid"></div>
+                </div>
+
+                <div class="form-group full">
+                  <label for="bio">Bio</label>
+                  <textarea id="bio" maxlength="160" placeholder="Fale sobre você..."></textarea>
+                </div>
+
+
+                <br>
+                <button id="saveProfile" class="btn btn-primary btn-wide" type="button">Salvar Perfil</button>
+            </form>
+
+            <aside class="profile-preview-card card">
+              <span class="kicker">Preview</span>
+              <div id="profilePreview" class="profile-card">
+                <div class="profile-card__banner">
+                  <img id="previewBanner" alt="Banner preview">
+                </div>
+                <div class="profile-card__avatar-row">
+                  <div class="profile-card__avatar">
+                    <img id="previewPhoto" alt="Foto preview">
+                  </div>
+                </div>
+                <div class="profile-card__body">
+                  <h3 class="profile-card__name" id="previewName">Agente THA</h3>
+                  <p class="profile-card__bio" id="previewBio">Perfil de agente da comunidade THA.</p>
+                  <div class="profile-card__tags">
+                    <span id="previewGender">Menina</span>
+                  </div>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="perfil.js"></script>
+</body>
+
+</html>

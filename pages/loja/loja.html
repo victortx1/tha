@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THA — Loja</title>
+  <meta name="theme-color" content="#ff7eb6">
+  <link rel="icon" href="../../assets/fotos/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="loja.css">
+</head>
+
+<body>
+  <div class="page-bg"></div>
+
+  <div id="pinkIntro" class="pink-wave-intro" hidden>
+    <div class="pink-wave"></div>
+    <div class="pink-wave-intro__bubbles"></div>
+    <div class="pink-wave-intro__logo">THA</div>
+  </div>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Loja THA</span>
+          <h2>Avatares e Banners</h2>
+          <p class="lead">Ganhe moedas no mini game e personalize seu perfil.</p>
+        </div>
+
+        <div id="shopGuest" class="shop-guest card">
+          <h3>Entre para comprar</h3>
+          <p class="lead">Faça login com Google para usar suas moedas na loja.</p>
+          <button class="btn btn-primary" type="button" onclick="loginGoogle()">Entrar com Google</button>
+        </div>
+
+        <div id="shopArea" hidden>
+          <div class="shop-balance card">
+            <span class="kicker">Seu saldo</span>
+            <p class="lead">Moedas ganhas:</p>
+
+            <div class="shop-coins-row">
+              <img src="../../assets/fotos/moeda.png" alt="Moeda" class="coin-icon">
+              <strong id="shopCoins">0</strong>
+            </div>
+          </div>
+          <div class="shop-back-home">
+            <a href="../../index.html" class="btn btn-primary">
+              Voltar ao Início
+            </a>
+          </div>
+
+          <div class="shop-section">
+            <h3>Avatares</h3>
+            <div id="shopAvatars" class="shop-grid"></div>
+          </div>
+
+          <div class="shop-section">
+            <h3>Banners</h3>
+            <div id="shopBanners" class="shop-grid"></div>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="loja.js"></script>
+  <script src="../../js/intro.js"></script>
+</body>
+
+</html>

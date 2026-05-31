@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THA</title>
+  <meta name="description" content="Comunidade THA — perfil, loja, moedas e mini game.">
+  <meta name="theme-color" content="#ff7eb6">
+  <link rel="icon" href="assets/fotos/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+  <div id="pinkIntro" class="pink-wave-intro" hidden aria-hidden="true">
+    <div class="pink-wave"></div>
+    <div class="pink-wave-intro__bubbles" aria-hidden="true"></div>
+    <div class="pink-wave-intro__logo">T<span></span>H<span>A</span></div>
+  </div>
+
+  <div class="page-bg"></div>
+
+
+  <main>
+    <section class="hero home-hero">
+      <div class="container">
+        <div class="hero-copy reveal">
+          <span class="hud-chip">Comunidade THA</span>
+          <h1>TH<span>A</span></h1>
+          <p>Assim como no Valorant, a vida é feita de rounds difíceis. Continue jogando até conquistar sua vitória.</p>
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="https://www.tiktok.com/@tha.oficial" target="_blank"
+              rel="noopener noreferrer">TikTok</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="comunidade">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Comunidade</span>
+          <h2>Seu perfil na THA</h2>
+        </div>
+
+        <div id="homeProfileGuest" class="home-guest card reveal">
+          <h3>Crie seu perfil de agente</h3>
+          <p class="lead">Entre com Google, ganhe moedas no game e compre avatares na loja.</p>
+          <button class="btn btn-primary" type="button" onclick="loginGoogle()">Entrar com Google</button>
+        </div>
+
+        <div id="homeProfileLogged" class="home-profile profile-card card reveal" hidden>
+          <div class="profile-card__banner">
+            <img id="homeProfileBanner" alt="Banner">
+          </div>
+          <div class="profile-card__avatar-row">
+            <div class="profile-card__avatar">
+              <img id="homeProfilePhoto" alt="Foto">
+            </div>
+          </div>
+          <div class="profile-card__body">
+            <span class="kicker">Seu perfil</span>
+            <h3 class="profile-card__name" id="homeProfileName">Agente</h3>
+            <p class="profile-card__bio" id="homeProfileBio">Membro da comunidade THA.</p>
+            <p class="home-coins">
+              <img src="assets/fotos/moeda.png" alt="Moeda" class="coin-icon">
+              <strong id="homeProfileCoins">0</strong> moedas
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" data-nav-perfil href="pages/perfil/perfil.html">Editar Perfil</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Redes</span>
+          <h2>Redes da THA</h2>
+          <p class="lead">Acompanhe a THA nos canais oficiais.</p>
+        </div>
+        <div id="homeSocialGrid" class="social-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Mini Game</span>
+          <h2>Ganhe moedas estourando balões</h2>
+        </div>
+        <article class="game-teaser card reveal">
+          <div class="game-teaser__icon">🎯</div>
+          <div>
+            <h3>Balloon Rush THA</h3>
+            <p class="lead">30 segundos de mira rosa.</p>
+            <a class="btn btn-primary" data-nav-game href="pages/game/game.html">Jogar agora</a>
+            <a class="btn btn-primary" data-nav-loja href="pages/loja/loja.html">Visitar Loja</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

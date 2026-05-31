@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>THA — Mini Game</title>
+  <meta name="theme-color" content="#ff7eb6">
+  <link rel="icon" href="../../assets/fotos/favicon.png" type="image/png">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+  <div class="page-bg"></div>
+
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker">Mini Game</span>
+          <h2>Balloon Rush THA</h2>
+          <p class="lead">Estoure balões em 30 segundos. Cada balão = 2 moedas na loja.</p>
+        </div>
+
+        <div class="game-panel card">
+          <div class="game-hud">
+            <div class="game-stat"><strong id="gameScore">0</strong><span>Balões</span></div>
+            <div class="game-stat"><strong id="gameTime">30</strong><span>Segundos</span></div>
+          </div>
+
+          <div id="gameArena" class="game-arena" aria-label="Arena do jogo"></div>
+
+          <div class="game-controls">
+            <button id="gameStart" class="btn btn-primary" type="button">
+              Iniciar
+            </button>
+
+            <a class="btn btn-ghost" href="../loja/loja.html">
+             Ir à Loja
+            </a>
+
+            <a class="btn btn-secondary" href="../../index.html">
+             Início
+            </a>
+          </div>
+
+          <div id="gameResult" class="game-result" hidden>
+            <h3>Fim de jogo!</h3>
+            <p class="lead">Balões estourados: <strong id="gameFinalScore">0</strong></p>
+            <p class="lead">Moedas ganhas: 🪙 <strong id="gameCoinsEarned">0</strong></p>
+            <p id="gameGuestNote" class="lead" hidden>Entre com Google para salvar suas moedas.</p>
+            <button id="gameRestart" class="btn btn-primary" type="button">Jogar de novo</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script type="module" src="game.js"></script>
+</body>
+
+</html>

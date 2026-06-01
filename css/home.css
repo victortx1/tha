@@ -389,3 +389,11 @@
   height: 22px;
   object-fit: contain;
 }
+.game-credit{
+    text-align:center;
+    margin-top:20px;
+    color:#000000;
+    font-size:14px;
+    font-weight:600;
+    opacity:0.8;
+}

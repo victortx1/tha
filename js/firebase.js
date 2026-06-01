@@ -1,16 +1,12 @@
-/**
- * firebase.js — THA Valorant Profile
- * Firebase Modular SDK v10.
- */
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
 import {
   getAuth,
-  GoogleAuthProvider
+  GoogleAuthProvider,
+  browserLocalPersistence,
+  setPersistence
 } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
 
-import {
-  getFirestore
-} from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDX4wrgE33kP-3XnFfUxrfmPQMEOfdADuw",
@@ -25,6 +21,10 @@ export const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 auth.useDeviceLanguage();
+
+setPersistence(auth, browserLocalPersistence).catch((error) => {
+  console.warn('[Firebase persistence]', error);
+});
 
 export const db = getFirestore(app);
 
